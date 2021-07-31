@@ -1,0 +1,98 @@
+cd C:\Program Files\Mysql\mysql-5.7.14-winx64\bin
+mysql -uroot -p
+show databases;
+use good;
+
+create table student(
+student_id int,
+student_name varchar(20),
+class_name varchar(20),
+area varchar(10)
+);
+
+create table student1(
+student_id int,
+studentname varchar(20));
+
+在表中插入数据:
+1,标准格式
+insert into student (student_id,student_name,class_name,area)
+values (5,'zhang5','ios0208','hunan'),
+values (6,'zhang6','php0318','beijing'),
+values (7,'zhang7','java0307','tianjin');
+
+insert into student (student_id,student_name,class_name,area)
+values (4,'zhang4');
+
+2,set 用法
+insert into student set student_id=8,student_name='zhang8';
+
+3，使用select从其他表调出数据
+insert into student1(student_id,studentname) select student_id,student_name from student;
+
+
+create table t1(
+id int,
+username varchar(20),
+nickname varchar(20));
+alter table t1 add primary key(id);
+
+insert into t1 (id,username,nickname)
+values (7,'冯十','小冯');
+
+替换
+replace into t1 values(6,'钱二','小钱');
+replace into t1 values(8,'右一','小右');
+replace into t1 values(6,'右一','小中');
+
+查询
+select * from t1;
+select * from t1 where id>4；
+select * from t1 where id>4 and username='孙七';
+select id,nickname from t1;
+
+修改
+update t1 set nickname='大王' where id=3;
+update t1 set nickname='gogo' where id>3 order by id desc limit 2;
+
+删除
+delete from t1 where id>3 order by id limit 1;
+
+
+
+create table t2
+(
+id int unsigned auto_increment primary key,
+username varchar(20) not null unique key,
+nickname varchar(20) character set utf8
+) default character set gbk;
+show create table t2\G
+insert into t2 values(null,'张三','小张');
+select * from t2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
