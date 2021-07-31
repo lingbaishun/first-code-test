@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function Search(){
+        sessionid=document.getElementById("sessionid").value
+        window.location.href="/donglang/"+sessionid
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>冬郎网站</title>
+</head>
+<body style="background: rgb(255, 255, 255); color: rgb(20, 185, 95);">
+    <div class="cover">
+        <h1 align="center">我老婆的专属网站</h1>
+        <div class="form" style="text-align: center;">
+        <form name="form" action="" method="GET">
+            sessionid:<input type="text" placeholder="输入sessiid" id="sessionid"></input>
+        <input type="button" value="查询" onclick="Search()"></input>
+        </form>
+        </div>
+        <p>
+        <img src="file://D:/learn/tornado/mytornado/templates/images/1.jpg" alt="老婆" width="432px" height="578px"/>
+        </p>
+    </div>
+</body>
+</html>
